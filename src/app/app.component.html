@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Material in ng5</span>  
+    <span class="examplespacer"></span>
+
+    <!-- material toolbar provides no positioning for flexibilit so use sass -->
+    <button mat-button>About</button>
+    <button mat-button>Staff</button>
+    <button mat-button>Queries</button>
+  </mat-toolbar-row>  
+</mat-toolbar>
+
+<mat-card>
+  <mat-form-field>
+    <input matInput [(ngModel)]="answer" placeholder="Say something here ...">
+  </mat-form-field>
+
+  <br>
+
+  <button mat-raised-button (click)="showAnswer()">You said</button>
+  <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+</mat-card>
+
+
+<mat-card *ngIf="answerDisplay">
+  <h1>'{{ answerDisplay }}' is your comment.</h1>
+</mat-card>
